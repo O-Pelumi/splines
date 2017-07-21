@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SplineView.h"
+#import "CPoint.h"
 
 @interface ViewController : UIViewController
 

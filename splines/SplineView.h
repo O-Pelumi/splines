@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPoint.h"
 
 @interface SplineView : UIView
 
 - (int) getIterationNumber;
 - (void) setIterationNumber:(int) iter;
 - (void) clearCanvas:(UIButton*) btn;
+
+- (void) addPoint:(CGPoint) newPoint;
 
 @end

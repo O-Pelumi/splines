@@ -6,11 +6,17 @@
 //  Copyright © 2017 Oluwapelumi. All rights reserved.
 //
 
+/**
+ *@file     bezier.h
+ *@brief    This header contains functions that do actual bezier subdivision
+ *@note     Header and implementation is contained in here and private functions are still callable so user must take care not to call those
+ */
+
 #ifndef bezier_h
 #define bezier_h
 
 //////////////////////////////////////////////////////////
-CGPoint midPoint(CGPoint p1, CGPoint p2){
+CGPoint midPoint(CGPoint p1, CGPoint p2) {
     return CGPointMake(0.5*(p1.x+p2.x), 0.5*(p1.y+p2.y));
 }
 
@@ -18,15 +24,18 @@ CGPoint midPoint(CGPoint p1, CGPoint p2){
 
 
 /*@brief    This function does a bezier subdivision
- *@detail   This function will do a bezeir subdivision on the supplied input array, it assumes there are four   \
- control point structs in the array as required for a bezeir subdivision. The output array must also \
- make provision for the new output points
+ *
+ *This function will do a bezeir subdivision on the supplied input array, it assumes there are four
+ *control point structs in the array as required for a bezeir subdivision. The output array must also
+ *make provision for the new output points.
+ *
  *@param    input[]         Array of input points
  *@param    output[]        Output array where subdivision points will be placed
  *@param    i_start_index   Where zero index should be assumed by the subdivide function in accessing the input array
  *@param    o_start_index   Where zero index should be assumed by the subdivide function in accessing the output array
+ *@note     This method is private API
  */
-void subdivide (CGPoint input[], CGPoint output[], const int i_start_index, const int iter_level){
+void subdivide (CGPoint input[], CGPoint output[], const int i_start_index, const int iter_level) {
     const int half_index = i_start_index+3*pow(2, iter_level-1);
     
     const int o_start_index = i_start_index;    //Consequence of inplace algorithm, they always coincide
@@ -49,7 +58,8 @@ void subdivide (CGPoint input[], CGPoint output[], const int i_start_index, cons
     
 }
 
-void r_sub(CGPoint output[], int iter_no, const int start){
+// To be qualified private
+void r_sub(CGPoint output[], int iter_no, const int start) {
     if (iter_no == 0) return;
     subdivide(output, output, start, iter_no--);
     r_sub(output, iter_no, start);
@@ -57,14 +67,15 @@ void r_sub(CGPoint output[], int iter_no, const int start){
 }
 
 
-void subdivide_n (CGPoint input[], CGPoint output[], int iter_no, const int start, const int end){
+void subdivide_n (CGPoint input[], CGPoint output[], int iter_no, const int start, const int end) {
     assert(end-start == 3);
     for (int i = 0; i < 4; i++)
         output[i] = input[i];
     r_sub(output, iter_no, start);
 }
 
-int output_size_for_4_points(int iteration){
+// To be qualified private
+int output_size_for_4_points(int iteration) {
     return 4+3*((int)pow(2, iteration)-1);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
