@@ -16,6 +16,7 @@
 		2193ADF41EBC8608003A1521 /* splinesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193ADF31EBC8608003A1521 /* splinesTests.m */; };
 		2193ADFF1EBC8608003A1521 /* splinesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193ADFE1EBC8608003A1521 /* splinesUITests.m */; };
 		2193AE0E1EBC891C003A1521 /* SplineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193AE0D1EBC891C003A1521 /* SplineView.m */; };
+		2193E5D81F23F39000237204 /* CPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193E5D71F23F39000237204 /* CPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		2193AE001EBC8608003A1521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2193AE0C1EBC891C003A1521 /* SplineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplineView.h; sourceTree = "<group>"; };
 		2193AE0D1EBC891C003A1521 /* SplineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplineView.m; sourceTree = "<group>"; };
+		2193E5D61F23ECE700237204 /* CPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPoint.h; sourceTree = "<group>"; };
+		2193E5D71F23F39000237204 /* CPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +112,11 @@
 				2193ADDD1EBC8608003A1521 /* AppDelegate.m */,
 				2193ADDF1EBC8608003A1521 /* ViewController.h */,
 				2193ADE01EBC8608003A1521 /* ViewController.m */,
-				218FD9261ECA17B800CB2A49 /* bezier.h */,
 				2193AE0C1EBC891C003A1521 /* SplineView.h */,
 				2193AE0D1EBC891C003A1521 /* SplineView.m */,
+				218FD9261ECA17B800CB2A49 /* bezier.h */,
+				2193E5D61F23ECE700237204 /* CPoint.h */,
+				2193E5D71F23F39000237204 /* CPoint.m */,
 				2193ADE21EBC8608003A1521 /* Main.storyboard */,
 				2193ADE51EBC8608003A1521 /* Assets.xcassets */,
 				2193ADE71EBC8608003A1521 /* LaunchScreen.storyboard */,
@@ -209,11 +214,12 @@
 		2193ADCE1EBC8607003A1521 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Oluwapelumi;
 				TargetAttributes = {
 					2193ADD51EBC8607003A1521 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MC4G3WP492;
 						ProvisioningStyle = Automatic;
 					};
 					2193ADEE1EBC8608003A1521 = {
@@ -230,7 +236,7 @@
 			};
 			buildConfigurationList = 2193ADD11EBC8607003A1521 /* Build configuration list for PBXProject "splines" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -284,6 +290,7 @@
 				2193AE0E1EBC891C003A1521 /* SplineView.m in Sources */,
 				2193ADDE1EBC8608003A1521 /* AppDelegate.m in Sources */,
 				2193ADDB1EBC8608003A1521 /* main.m in Sources */,
+				2193E5D81F23F39000237204 /* CPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,21 +349,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -391,21 +407,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -434,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC4G3WP492;
 				INFOPLIST_FILE = splines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oracletech.splines;
@@ -445,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC4G3WP492;
 				INFOPLIST_FILE = splines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oracletech.splines;
